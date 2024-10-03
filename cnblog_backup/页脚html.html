@@ -1,0 +1,180 @@
+<style id="ceshicss">
+    @media (max-width: 767px){
+    #set_btn_box {width: 100vw;left: 0;right: 0;bottom: 0;background: hsla(0,0%,100%,.6);height: 49px;display: flex;justify-content: space-between;align-items: center;padding: 12px 40px;border-top: 1px solid #e8e8e8;box-sizing: border-box;}
+    .set_btn {margin-top: 0;}
+    .set_btn.fly_top.fadeIn.animated {position: absolute;right: 10px;bottom: 60px;}
+    .container{bottom:50px}}
+    #mainContent{width:90%}
+    </style>
+    <link href="https://blog-static.cnblogs.com/files/miluluyo/tippy.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/@popperjs/core@2.4.2/dist/umd/popper.min.js"></script>
+    <script src="https://blog-static.cnblogs.com/files/miluluyo/tippy.js"></script>
+    <link rel='stylesheet' href='https://cdn.bootcss.com/animate.css/3.7.2/animate.min.css'>
+    <script src="https://at.alicdn.com/t/font_1825850_klax1ao4o6.js"></script>
+    <script src="https://blog-static.cnblogs.com/files/miluluyo/three.min.js"></script>
+    <script src='https://blog-static.cnblogs.com/files/miluluyo/star.js'></script>
+    <link rel="stylesheet" href="https://blog-static.cnblogs.com/files/miluluyo/OwO.min.css" />
+    <script src="https://blog-static.cnblogs.com/files/miluluyo/OwO2.min.js"></script>
+    <script src="https://blog-static.cnblogs.com/files/miluluyo/cute-cnblogs2.js"></script>
+    <script src="https://blog-static.cnblogs.com/files/miluluyo/monitoring2.js"></script>
+    
+    <script>
+    
+    miluframe({
+      Youself:'https://www.cnblogs.com/misaka1932/', /*个人的博客园链接*/
+      /*博客园导航信息*/
+        custom:[{
+          name:'首页',
+          link:'https://www.cnblogs.com/misaka1932/',
+          istarget:true
+        },{
+          name:'联系',
+          link:'https://msg.cnblogs.com/send/%E9%BA%8B%E9%B9%BF%E9%B2%81%E5%93%9F',
+          istarget:true
+        },{
+          name:'技能树',
+          link:'https://https://github.com/Misaka1932',
+          istarget:true
+        },{
+          name:'留言板',
+          link:'https://www.cnblogs.com/misaka1932/p/14537097.html',
+          istarget:true
+        },{
+          name:'相册',
+          link:'https://www.cnblogs.com/misaka1932/gallery.html',
+          istarget:true
+        },{
+          name:'友链',
+          link:'https://www.cnblogs.com/misaka1932/p/14537097.html',
+          istarget:true
+        },{
+          name:'管理',
+          link:'https://i.cnblogs.com/',
+          istarget:true
+        }],
+        /*向别人展示自己的友链信息*/
+        resume:{
+            "name":"MitruHa",
+            "link":"https://www.cnblogs.com/misaka1932/",
+            "headurl":"https://images.cnblogs.com/cnblogs_com/misaka1932/1947878/o_210315052540IMG_036.png",
+            "introduction":"君は、これからも私と一绪にいてくれますか?"
+        },
+        /*友链信息*/
+        unionbox:[{
+            "name":"MitruHa的博客",
+            "introduction":"君は、これからも私と一绪にいてくれますか?",
+            "url":"https://www.cnblogs.com/misaka1932",
+            "headurl":"https://images.cnblogs.com/cnblogs_com/misaka1932/1947878/o_210315052540IMG_036.png"
+          },{
+            "name":"MitruHa的技能树",
+            "introduction":"在每一个黑夜为你揽下一夜的星光",
+            "url":"https://github.com/Misaka1932",
+            "headurl":"https://images.cnblogs.com/cnblogs_com/misaka1932/1947878/o_210316080937QQ%E5%9B%BE%E7%89%8720210312131720.jpg"
+          },{
+              "name":"MitruHa的BiliBili",
+            "introduction":"今夜的无名风",
+            "url":"https://space.bilibili.com/454845866",
+            "headurl":"https://images.cnblogs.com/cnblogs_com/misaka1932/1947878/o_210316081006QQ%E5%9B%BE%E7%89%8720210316160924.jpg"
+          }, {
+            "name":"学校计算机社团的官网",
+            "introduction":"星垂平野清辉落，梦末犹美伊永存",
+            "url":"https://weisheng.cf",
+            "headurl":"https://images.cnblogs.com/cnblogs_com/misaka1932/1947878/o_210316081052favicon.png"
+          }, {
+            "name":"MitruHa的osu主页",
+            "introduction":"向着曙光，不断奔跑",
+            "url":"https://osu.ppy.sh/users/11772841",
+            "headurl":"https://images.cnblogs.com/cnblogs_com/misaka1932/1947878/o_210316092352QQ%E5%9B%BE%E7%89%8720210316172337.jpg"
+          }, 
+        ],
+        /*浏览器顶部小图标*/
+        logoimg:'https://images.cnblogs.com/cnblogs_com/misaka1932/1947878/o_210316090146QQ%E5%9B%BE%E7%89%8720210316170107.jpg',
+        /*文章页面标题前的图标，此处图标有扩展，下面会提到图标*/
+        cuteicon:['icon-caomei','icon-boluo','icon-huolongguo','icon-chengzi','icon-hamigua','icon-lizhi','icon-mangguo','icon-liulian','icon-lizi','icon-lanmei','icon-longyan','icon-shanzhu','icon-pingguo','icon-mihoutao','icon-niuyouguo','icon-xigua','icon-putao','icon-xiangjiao','icon-ningmeng','icon-yingtao','icon-taozi','icon-shiliu','icon-ximei','icon-shizi'],
+        /*赞赏，若true则显示此按钮，false则不显示*/
+        isGratuity:false,
+        /*赞赏按钮焦点显示赞赏内容，内容可自行更改*/
+        gratuity:'<div class="popper_box"><p><b>要请我喝奶茶喵？</b> </p><div class="popper_box_con"><div class="popper_box_con_li"><img src="https://images.cnblogs.com/cnblogs_com/miluluyo/1765646/o_200521053817wx.png" alt="">微信扫码</div><div class="popper_box_con_li"><img src="https://images.cnblogs.com/cnblogs_com/miluluyo/1765646/o_200521053827zfb.png" >支付宝扫码</div></div><p><b>留下一句你觉得很励志与美的话给我吧~</b>&nbsp;&nbsp;<b><a href="https://www.cnblogs.com/miluluyo/p/12930946.html">GO</a></b></div>'
+    })
+    </script>
+    <!-- 点赞 -->
+    <canvas width="1777" height="841" style="position: fixed; left: 0px; top: 0px; z-index: 2147483647; pointer-events: none;"></canvas><script src="https://blog-static.cnblogs.com/files/miluluyo/mouse-click.js"></script>
+    
+    <!-- 以下内容是否添加你随意 -->
+    
+    <script>
+      /*在文章页面添加古诗词*/
+      $("#navigator").after('<div class="poem-wrap"><div class="poem-border poem-left"></div><div class="poem-border poem-right"></div><h1>念两句诗</h1><div id="poem_sentence"></div><div id="poem_info"></div></div>')
+    </script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      jinrishici.load(function(result) {
+        var sentence = document.querySelector("#poem_sentence")
+        var info = document.querySelector("#poem_info")
+        sentence.innerHTML = result.data.content
+        info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+      });
+    </script>
+    
+    <!--音乐，只在PC端宽度>1000px时显示-->
+    <link rel="stylesheet" href="https://blog-static.cnblogs.com/files/miluluyo/APlayer.min.css">
+    <div id="player" class="aplayer aplayer-withlist aplayer-fixed" data-id="5460484417" data-server="netease" data-type="playlist" data-order="random" data-fixed="true" data-listfolded="true" data-theme="#2D8CF0"></div>
+    <script src="https://blog-static.cnblogs.com/files/miluluyo/APlayer.min.js"></script>
+    <script src="https://blog-static.cnblogs.com/files/miluluyo/Meting.min.js"></script>
+    
+    <!--猫，只在PC端显示，移动端不加载了，因为会卡顿页面-->
+    <script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+    <script>
+      var mobile_flag = isMobile();
+      if(mobile_flag){
+        //console.info("移动端")
+      }else{
+        //console.info("PC端")
+        L2Dwidget.init({
+            "model": {
+                "jsonPath": "https://unpkg.com/live2d-widget-model-hijiki/assets/hijiki.model.json",
+                "scale": 1
+            },
+            "display": {
+                "position": "left",
+                "width": 100,
+                "height": 200,
+                "hOffset": 70,
+                "vOffset": 0
+            },
+            "mobile": {
+                "show": true,
+                "scale": 0.5
+            },
+            "react": {
+                "opacityDefault": 0.7,
+                "opacityOnHover": 0.2
+            }
+        });
+        window.onload = function(){
+          $("#live2dcanvas").attr("style","position: fixed; opacity: 0.7; left: 70px; bottom: 0px; z-index: 1; pointer-events: none;")
+        }
+      }
+    
+    </script>
+    
+    <script>
+    
+    /*记录访问数据，我用了两个，一个是这个在 https://clustrmaps.com/ 网站，另一个是 https://www.51.la/ 这个网站*/
+    /*
+        第一种：https://clustrmaps.com/
+        注册账号，添加自己博客园的链接，选择自定义Customize,
+        选择 Image based (basic version for websites that don't support javascript)，调整到你喜欢的样式，然后复制
+        ：这个我插入在了侧边栏的最底部，把生成的代码粘贴到append内，这就完事了
+    */
+    $('#sideBarMain').append('')
+    
+    /*
+        第二种：https://www.51.la/
+        注册账号，点控制台，添加统计ID，统计图标显示我是不显示的
+        这个目前插入的js好像报错，我的是很早之前生成的，还能用，因此还是推荐用第一种吧
+    
+        别的地方也有这种很多统计访问数据的，可以自己找找看呢
+    
+    */
+    </script>
