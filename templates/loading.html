@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <title>Loading...</title>
+    <meta charset="UTF-8">
+    <!--
+    <link rel="icon" href="../statics/ico/loadingico.jpeg">
+    <link rel="stylesheet" href="../statics/css/home.css"> 
+    -->
+
+    <style type="text/css">
+
+    #v4-pre-loaded {
+        background-color: #212220;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+        z-index: 19900207;
+        text-align: center;
+        -webkit-transition: all 1s linear;
+        transition: all 1s linear
+    }
+
+    #v4-pre-loaded:before,#v4-pre-loaded .loading {
+        display: inline-block;
+        vertical-align: middle
+    }
+
+    #v4-pre-loaded:before {
+        content: '';
+        height: 100%
+    }
+
+    #v4-pre-loaded .loading {
+        width: 380px;
+        height: 400px;
+        background: url(../statics/bg/loading.png) 100% no-repeat;
+        background-size: cover;
+        -webkit-transition: all 1s linear;
+        transition: all 1s linear;
+        -webkit-animation: loadingInit 1.3s cubic-bezier(0.30, 2.40, 0.85, 2.50) infinite;
+                animation: loadingInit 1.3s cubic-bezier(0.30, 2.40, 0.85, 2.50) infinite; 
+    }
+
+    #v4-pre-loaded .loading:after {
+        width: 100%;
+        line-height: 36px;
+        content: 'Loading...';
+        position: absolute;
+        left: 0;
+        bottom: -36px;
+        font-size: 14px;
+        text-align: center;
+        color: #787977;
+        opacity: 0;
+        -webkit-transition: opacity 1s linear;
+        transition: opacity 1s linear;
+        -webkit-animation: fadeIn .8s linear 1s 1 forwards;
+        animation: fadeIn .8s linear 1s 1 forwards
+    }
+
+    @-webkit-keyframes loadingInit {
+        from, to {
+        -webkit-transform: translateY(-15vh) scaleY(1.02);
+                transform: translateY(-15vh) scaleY(1.02);
+        }
+        80% {
+        -webkit-transform: translateY(-30vh) scaleY(.98);
+                transform: translateY(-30vh) scaleY(.98);
+        }
+    }
+
+    @keyframes loadingInit {
+        from, to {
+        -webkit-transform: translateY(-15vh) scaleY(1.02);
+                transform: translateY(-15vh) scaleY(1.02);
+        }
+        80% {
+        -webkit-transform: translateY(-30vh) scaleY(.98);
+                transform: translateY(-30vh) scaleY(.98);
+        }
+    }
+
+    #v4-pre-loaded.hide {
+        opacity: 0;
+        visibility: hidden
+    }
+
+    </style>
+</head>
+<body>
+     
+<div id="v4-pre-loaded">
+    <div class="loading"></div>
+</div>
+</body>
+</html>
