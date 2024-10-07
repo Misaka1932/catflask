@@ -20,3 +20,4 @@ setx MAIL_PASSWORD = "114514"          #发件人的POP3/IMAP/SMTP服务的SSL�
 '''
 
 mail = Mail(app)
+import main

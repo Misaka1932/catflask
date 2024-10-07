@@ -61,7 +61,7 @@ function stopp() {
         child.parentNode.removeChild(child), window.cancelAnimationFrame(stop), staticx = !1
     } else startSakura()
 }
-img.src = "../statics/ico/sakura.png", Sakura.prototype.draw = function(cxt) {
+img.src = "../static/ico/sakura.png", Sakura.prototype.draw = function(cxt) {
     cxt.save();
     var xc = 40 * this.s / 4;
     cxt.translate(this.x, this.y), cxt.rotate(this.r), cxt.drawImage(img, 0, 0, 40 * this.s, 40 * this.s), cxt.restore()
