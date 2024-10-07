@@ -16,7 +16,7 @@ app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')
 
 Windows 可以用setx设置环境变量 (记得重启电脑 不然get函数还是会识别成None)
 setx MAIL_USERNAME = "homo@qq.com"     #发件人的用户名
-setx MAIL_PASSWORD = "114514"          #发件人的POP3/IMAP/SMTP服务的SSL连接客户端授权码
+setx MAIL_PASSWORD = "1145141919810"          #发件人的POP3/IMAP/SMTP服务的SSL连接客户端授权码
 '''
 
 mail = Mail(app)
