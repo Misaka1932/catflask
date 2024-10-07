@@ -1,0 +1,18 @@
+你好 {{ user }},
+
+验证码为 {{token}}, 请尽快完成注册哦~
+
+如果您没有请求注册，请忽略此消息。
+
+香草flask实践网站
+
+--------------------------------------------------
+
+Hello {{ user }},
+
+Your code is: {{token}}. Use it to verify your email for login.
+
+If you didn't request this, simply ignore this message.
+
+Yours,
+CatFlask Team
