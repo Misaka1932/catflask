@@ -158,11 +158,11 @@ a {
 }
 
 a {
-    -webkit-transition: all 0.2s cubic-bezier(0.42, 0, 0.58, 1);
-    -moz-transition: all 0.2s cubic-bezier(0.42, 0, 0.58, 1);
-    -ms-transition: all 0.2s cubic-bezier(0.42, 0, 0.58, 1);
-    -o-transition: all 0.2s cubic-bezier(0.42, 0, 0.58, 1);
-    transition: all 0.2s cubic-bezier(0.42, 0, 0.58, 1);
+    -webkit-transition: all 1s cubic-bezier(0.42, 0, 0.58, 1);
+    -moz-transition: all 1s cubic-bezier(0.42, 0, 0.58, 1);
+    -ms-transition: all 1s cubic-bezier(0.42, 0, 0.58, 1);
+    -o-transition: all 1s cubic-bezier(0.42, 0, 0.58, 1);
+    transition: all 1s cubic-bezier(0.42, 0, 0.58, 1);
     cursor: pointer;
     text-decoration: none;
     color: rgba(255, 29, 77, 0.6);
@@ -207,11 +207,11 @@ a:focus {
     top: 50vh;
     width: 100%;
     padding: 0 5%;
-    -webkit-transition: all 0.3s cubic-bezier(0, 0, 0.58, 1);
-    -moz-transition: all 0.3s cubic-bezier(0, 0, 0.58, 1);
-    -ms-transition: all 0.3s cubic-bezier(0, 0, 0.58, 1);
-    -o-transition: all 0.3s cubic-bezier(0, 0, 0.58, 1);
-    transition: all 0.3s cubic-bezier(0, 0, 0.58, 1);
+    -webkit-transition: all 1.3s cubic-bezier(0, 0, 0.58, 1);
+    -moz-transition: all 1.3s cubic-bezier(0, 0, 0.58, 1);
+    -ms-transition: all 1.3s cubic-bezier(0, 0, 0.58, 1);
+    -o-transition: all 1.3s cubic-bezier(0, 0, 0.58, 1);
+    transition: all 1.3s cubic-bezier(0, 0, 0.58, 1);
     -webkit-transform: translateY(-50%);
     -moz-transform: translateY(-50%);
     -ms-transform: translateY(-50%);

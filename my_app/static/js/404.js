@@ -8,11 +8,11 @@ $(window).load(function() {
             text: 'ERROR 404 NOT FOUND'
         });
         MESSAGES.push({
-            delay: 800,
+            delay: 1500,
             text: '从前有座山，山里有座庙，'
         });
         MESSAGES.push({
-            delay: 1800,
+            delay: 2500,
             text: '庙里有个页面，现在找不到...'
         });
         $container = $('#container');
@@ -22,8 +22,8 @@ $(window).load(function() {
         scramble = function(element, text, options) {
             var $element, addGlitch, character, defaults, ghostCharacter, ghostCharacters, ghostLength, ghostText, ghosts, glitchCharacter, glitchCharacters, glitchIndex, glitchLength, glitchProbability, glitchText, glitches, i, k, letter, object, order, output, parameters, ref, results, settings, shuffle, target, textCharacters, textLength, wrap;
             defaults = {
-                probability: 0.2,
-                glitches: '-|/\\',
+                probability: 0.3,
+                glitches: 'ꑀꌅꌅꊿꌅ ꎨꂷꎨ ꃔꊿꋖ ꊯꊿꌈꃔꀷ',
                 blank: '',
                 duration: text.length * 40,
                 ease: 'easeInOutQuad',

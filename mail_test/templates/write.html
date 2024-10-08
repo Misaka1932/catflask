@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="{{ url_for('send_mail') }}" method="post">
+        <p>收件人是：<input type="text" name="username"></p>
+        <p>邮箱主题为：<input type="text" name="theme"></p>
+        <p>邮箱内容为：<input type="text" name="content"></p>
+        <p><input type="submit" value="发送"></p>
+    </form>
+</body>
+</html>
