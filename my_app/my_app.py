@@ -7,8 +7,11 @@ app = Flask(__name__)
 app.config['MAIL_SERVER'] = 'smtp.qq.com'
 app.config['MAIL_PORT'] = 465
 app.config['MAIL_USE_SSL'] = True
+app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')
 app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')
+app.config['SECRET_KET'] = 'd75d7746cfb123baf833597f5a3bfca0a4aece17dc49c6fd'
+app.secret_key = 'd75d7746cfb123baf833597f5a3bfca0a4aece17dc49c6fd'
 
 '''
 千万不要把账户密码直接写入代码中。
@@ -16,7 +19,7 @@ app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')
 
 Windows 可以用setx设置环境变量 (记得重启电脑 不然get函数还是会识别成None)
 setx MAIL_USERNAME = "homo@qq.com"     #发件人的用户名
-setx MAIL_PASSWORD = "1145141919810"          #发件人的POP3/IMAP/SMTP服务的SSL连接客户端授权码
+setx MAIL_PASSWORD = "1145141919810"   #发件人的POP3/IMAP/SMTP服务的SSL连接客户端授权码
 '''
 
 mail = Mail(app)
