@@ -12,6 +12,10 @@ def empty_page():
 def home_page():
     return render_template('home.html')
 
+@app.route('/login')
+def login_page():
+    return render_template('login.html')
+
 @app.route('/404')
 def not_found_page():
     return render_template('404.html'), 404
