@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 from flask_mail import Mail, Message
 import os
+import webbrowser
 app = Flask(__name__)
 
 app.config['MAIL_SERVER']   = 'smtp.qq.com'
@@ -26,4 +27,5 @@ def send_mail():
     return '邮件发送成功'
 
 if __name__ == '__main__':
-     app.run(debug = True)
+    webbrowser.open_new('http://localhost:5000/write')
+    app.run(debug = True)
