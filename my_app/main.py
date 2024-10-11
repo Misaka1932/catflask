@@ -1,8 +1,9 @@
 import random
+import logging
 from my_app import app
 from sendmail import send_register_mail, send_password_reset_email
 from flask_mail import Message
-from flask import render_template, session, request, url_for, redirect, abort, \
+from flask import Flask, render_template, session, request, url_for, redirect, abort, \
                     flash, get_flashed_messages, g
 
 '''
@@ -33,9 +34,9 @@ def register_page():
         return render_template('register.html')
     
     else:
+        username = request.form.get('name')
         email = request.form.get('email')
         password = request.form.get('password')
-        username = request.form.get('username')
 
         token = random.randint(100000, 999999)
         send_register_mail(email, username=username, token=token)
@@ -43,12 +44,34 @@ def register_page():
         session['email_save'] = email
         session['password_save'] = password
         session['username_save'] = username
+
+        # app.logger.debug('register 具体信息')
+        # app.logger.debug(email)
+        # app.logger.debug(password)
+        # app.logger.debug(username)
+        # app.logger.debug('----------------')
+
         return redirect(url_for('register_email_page'))
     
 @app.route('/agreement')
 def agreement_page():
     return render_template('agreement.html')
 
-@app.route('/register-email')
+@app.route('/register-email', methods=['GET', 'POST'])
 def register_email_page():
-    return render_template('register-email.html')
+    user_token = request.form.get('user_token')
+    correct_token = session.get('token_register')
+
+    # app.logger.debug('验证码具体信息')
+    # app.logger.debug(user_token)
+    # app.logger.debug(correct_token)
+    # app.logger.debug('----------------')
+    if user_token == correct_token:
+        return render_template(url_for('mainpage_page'))
+    else:
+        error = '验证码错误!'
+        return render_template('register-email.html', error=error)
+    
+@app.route('/mainpage')
+def mainpage_page():
+    return render_template('mainpage.html')
