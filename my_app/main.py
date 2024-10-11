@@ -27,6 +27,24 @@ def not_found_page():
 def login_page():
     return render_template('login.html')
 
-@app.route('/register')
+@app.route('/register', methods=['GET', 'POST'])
 def register_page():
-    return render_template('register.html')
+    if request.method == "GET":
+        return render_template('register.html')
+    
+    else:
+        email = request.form.get('email')
+        password = request.form.get('password')
+        username = request.form.get('username')
+
+        token = random.randint(1000, 9999)
+        send_register_mail(email, username=username, token=token)
+        session['token_register'] = str(token)
+        session['email_save'] = email
+        session['password_save'] = password
+        session['username_save'] = username
+        return redirect(url_for('register_email_page'))
+    
+@app.route('/register-email')
+def register_email_page():
+    return render_template('register-email.html')
