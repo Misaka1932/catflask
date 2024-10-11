@@ -37,7 +37,7 @@ def register_page():
         password = request.form.get('password')
         username = request.form.get('username')
 
-        token = random.randint(1000, 9999)
+        token = random.randint(100000, 999999)
         send_register_mail(email, username=username, token=token)
         session['token_register'] = str(token)
         session['email_save'] = email
@@ -45,6 +45,10 @@ def register_page():
         session['username_save'] = username
         return redirect(url_for('register_email_page'))
     
+@app.route('/agreement')
+def agreement_page():
+    return render_template('agreement.html')
+
 @app.route('/register-email')
 def register_email_page():
     return render_template('register-email.html')
