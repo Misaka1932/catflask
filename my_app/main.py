@@ -67,11 +67,11 @@ def register_email_page():
     # app.logger.debug(correct_token)
     # app.logger.debug('----------------')
     if user_token == correct_token:
-        return render_template(url_for('mainpage_page'))
+        return redirect(url_for('blog_page'))
     else:
         error = '验证码错误!'
         return render_template('register-email.html', error=error)
     
-@app.route('/mainpage')
-def mainpage_page():
-    return render_template('mainpage.html')
+@app.route('/blog')
+def blog_page():
+    return render_template('blogpage.html')
