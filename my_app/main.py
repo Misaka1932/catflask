@@ -4,7 +4,7 @@ from my_app import app
 from sendmail import send_register_mail, send_password_reset_email
 from flask_mail import Message
 from flask import Flask, render_template, session, request, url_for, redirect, abort, \
-                    flash, get_flashed_messages, g
+                    flash, get_flashed_messages, g, jsonify
 
 '''
     g 作为 flask 程序全局的一个临时变量 充当中间媒介的作用 我们可以通过它传递一些数据
@@ -59,18 +59,22 @@ def agreement_page():
 
 @app.route('/register-email', methods=['GET', 'POST'])
 def register_email_page():
-    user_token = request.form.get('user_token')
-    correct_token = session.get('token_register')
-
-    # app.logger.debug('验证码具体信息')
-    # app.logger.debug(user_token)
-    # app.logger.debug(correct_token)
-    # app.logger.debug('----------------')
-    if user_token == correct_token:
-        return redirect(url_for('blog_page'))
+    if request.method == "GET":
+        return render_template('register.html')
     else:
-        error = '验证码错误!'
-        return render_template('register-email.html', error=error)
+        user_token = request.form.get('user_token')
+        correct_token = session.get('token_register')
+
+        # app.logger.debug('验证码具体信息')
+        # app.logger.debug(user_token)
+        # app.logger.debug(correct_token)
+        # app.logger.debug('----------------')
+        if user_token == correct_token:
+            return redirect(url_for('blog_page'))
+        else:
+            error = '验证码错误!'
+            # return jsonify({'status': '-1', 'text': '验证码错误!'})
+            return render_template('register-email.html', error=error)
     
 @app.route('/blog')
 def blog_page():
