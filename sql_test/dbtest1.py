@@ -43,14 +43,14 @@ def add_user(username, password, email):
     conn.commit()
     cursor.close()
 
-def check_password(username, password):
+def check_password(email, password):
 
     # 以后可能会修改返回值 这样感觉可以更清楚知道哪里错了
     # 暂时就用True和False了
     
     conn = sqlite3.connect('data.db')
     cursor = conn.cursor()
-    cursor.execute(f'select * from user where username="{username}"')
+    cursor.execute(f'select * from user where email="{email}"')
     
     rowcount = cursor.rowcount
     result = cursor.fetchone()
@@ -72,4 +72,4 @@ def check_password(username, password):
 
 # createdb()
 # add_user('Admin', '123456', 'mitruha@qq.com')
-# print(check_password('Admin', '123456'))
+print(check_password('mitruha@qq.com', '123456'))

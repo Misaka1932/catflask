@@ -25,9 +25,28 @@ def home_page():
 def not_found_page():
     return render_template('404.html')
 
-@app.route('/login')
+@app.route('/login', methods=['GET', 'POST'])
 def login_page():
-    return render_template('login.html')
+    if 'email' in session:
+        return redirect(url_for('blog_page'))
+    
+    if request.method == "GET":
+        return render_template('login.html')
+    
+    else:
+        email = request.form.get('email')
+        password = request.form.get('password')
+
+        # app.logger.debug('login 具体信息')
+        # app.logger.debug(email)
+        # app.logger.debug(password)
+        # app.logger.debug('----------------')
+
+        if check_password(email, password):
+            session['email'] = email
+            return redirect(url_for('blog_page'))
+        else:
+            return render_template('login.html')
 
 @app.route('/register', methods=['GET', 'POST'])
 def register_page():
@@ -54,7 +73,6 @@ def register_page():
         # app.logger.debug(username)
         # app.logger.debug('----------------')
 
-
         return redirect(url_for('register_email_page'))
     
 @app.route('/agreement')
@@ -63,9 +81,9 @@ def agreement_page():
 
 @app.route('/register-email', methods=['GET', 'POST'])
 def register_email_page():
-    if request.method == "GET":
-        return render_template('register.html')
-    else:
+    # if request.method == "GET":
+    #     return render_template('register.html')
+    # else:
         user_token = request.form.get('user_token')
         correct_token = session.get('token_register')
 
@@ -74,7 +92,12 @@ def register_email_page():
         # app.logger.debug(correct_token)
         # app.logger.debug('----------------')
         if user_token == correct_token:
-            return redirect(url_for('blog_page'))
+            password = session.get('password_save')
+            email = session.get('email_save')
+            username = session.get('username_save')
+            add_user(username, password, email)
+            return redirect(url_for('login_page'))
+        
         else:
             error = '验证码错误!'
             # return jsonify({'status': '-1', 'text': '验证码错误!'})
