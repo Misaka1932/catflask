@@ -5,6 +5,7 @@ from sendmail import send_register_mail, send_password_reset_email
 from flask_mail import Message
 from flask import Flask, render_template, session, request, url_for, redirect, abort, \
                     flash, get_flashed_messages, g, jsonify
+from dbinit import check_password, add_user, createdb
 
 '''
     g 作为 flask 程序全局的一个临时变量 充当中间媒介的作用 我们可以通过它传递一些数据
@@ -30,6 +31,8 @@ def login_page():
 
 @app.route('/register', methods=['GET', 'POST'])
 def register_page():
+    createdb()
+
     if request.method == "GET":
         return render_template('register.html')
     
@@ -50,6 +53,7 @@ def register_page():
         # app.logger.debug(password)
         # app.logger.debug(username)
         # app.logger.debug('----------------')
+
 
         return redirect(url_for('register_email_page'))
     
